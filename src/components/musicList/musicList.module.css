@@ -1,0 +1,111 @@
+.container {
+  width: 75%;
+  height: 75%;
+  border-radius: 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  padding: 0 50px;
+  display: flex;
+  flex-direction: column;
+  align-content: space-between;
+  position: relative;
+}
+
+.title {
+  padding: 80px 0;
+  text-align: center;
+  color: white;
+  font-size: 32px;
+  font-weight: 700;
+  flex-basis: 30%;
+  justify-self: center;
+}
+
+.slider {
+  height: 50%;
+  flex-basis: 70%;
+}
+
+:global .slide-dots {
+  position: absolute;
+  left: 50%;
+  bottom: 15%;
+  transform: translateX(-50%);
+  text-align: center;
+  list-style: none;
+}
+
+:global .slide-dots > li {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+}
+:global .slide-dots > li:not(:first-child) {
+  margin-left: 10px;
+}
+
+:global .slide-dots > li > button {
+  display: block;
+  text-indent: -9999px;
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  background-color: rgba(255, 255, 255, 0.6);
+  cursor: pointer;
+  transition: 0.2s;
+  border-radius: 50%;
+}
+
+:global .slide-dots > li > button:hover {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+:global .slide-dots > li.slick-active {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+:global .slick-slide {
+  padding: 5px;
+}
+
+.slide_arrow {
+  position: absolute;
+  cursor: pointer;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  outline: none;
+  border: none;
+  background-color: rgba(255, 255, 255);
+  opacity: 0.6;
+  transition: 0.2s;
+}
+
+.slide_arrow:hover {
+  opacity: 1;
+}
+
+.slide_prev {
+  left: 10px;
+  top: 50%;
+  padding: 3px 2px 2px 0px;
+}
+
+.slide_next {
+  right: 10px;
+  top: 50%;
+  padding: 3px 0px 2px 2px;
+}
+
+.icon {
+  font-size: 20px;
+  color: #007177;
+}
+
+@media screen and (max-width: 991px) {
+  .container {
+    width: 90%;
+    height: 70%;
+  }
+}

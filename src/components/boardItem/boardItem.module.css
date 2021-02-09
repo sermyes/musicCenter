@@ -1,0 +1,176 @@
+.nameWrapper,
+.itemContent,
+.date,
+.noticeContent,
+.type,
+.admin,
+.writer {
+  pointer-events: none;
+}
+
+.item,
+.notice {
+  text-align: center;
+  padding: 6px 10px;
+  display: flex;
+}
+.item {
+  background-color: rgba(1, 113, 119, 0.05);
+  color: rgba(1, 113, 119, 1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+.nameWrapper {
+  flex-basis: 15%;
+  position: relative;
+}
+.name {
+  padding-right: 5px;
+}
+.writer {
+  font-size: 10px;
+  padding: 2px 4px;
+  letter-spacing: -1px;
+  border: 1px solid red;
+  color: red;
+  border-radius: 15px;
+  position: absolute;
+  width: 40px;
+}
+.itemContent {
+  flex-basis: 55%;
+}
+.date {
+  flex-basis: 20%;
+}
+.new {
+  box-sizing: border-box;
+  position: relative;
+  display: inline-block;
+  font-size: 10px;
+  width: 12px;
+  line-height: 12px;
+  border-radius: 50%;
+  margin-left: 2px;
+  top: -3px;
+  background-color: red;
+  color: white;
+}
+
+/* item css */
+
+.notice {
+  color: red;
+  background-color: thistle;
+  font-size: 12px;
+  border-bottom: 1px solid rgba(255, 0, 0, 0.6);
+}
+.type {
+  flex-basis: 15%;
+  font-weight: bold;
+}
+.noticeContent {
+  flex-basis: 55%;
+  font-weight: bold;
+}
+.adminWrapper {
+  flex-basis: 20%;
+  position: relative;
+}
+/* notice css */
+
+.option {
+  text-align: left;
+  position: relative;
+  flex-basis: 5%;
+}
+.optionBtn {
+  margin: 0 auto;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: transparent;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.elipsis {
+  display: block;
+  border: 2px solid rgba(0, 0, 0, 0.5);
+  margin-bottom: 1px;
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.deleteBtn {
+  top: -4px;
+  left: 65%;
+  cursor: pointer;
+  outline: none;
+  font-weight: bold;
+  border: 2px solid rgba(0, 0, 0, 0.6);
+  border-radius: 5px;
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+  width: 40px;
+  color: rgba(0, 0, 0, 0.6);
+  transition: color 0.2s;
+}
+.deleteBtn:hover {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+:global .delBtn.active {
+  opacity: 1 !important;
+  pointer-events: all !important;
+}
+/* delete btn css */
+
+@media screen and (max-width: 991px) {
+  .optionBtn {
+    margin: 0;
+  }
+  .deleteBtn {
+    left: 30%;
+  }
+  .nameWrapper {
+    flex-basis: 20%;
+  }
+  .itemContent {
+    flex-basis: 50%;
+  }
+  .date {
+    flex-basis: 20%;
+  }
+  .notice > *,
+  .item > * {
+    margin-right: 5px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .type {
+    flex-basis: 20%;
+  }
+  .noticeContent {
+    flex-basis: 60%;
+  }
+  .nameWrapper {
+    flex-basis: 20%;
+  }
+  .itemContent {
+    flex-basis: 60%;
+  }
+  .date {
+    flex-basis: 15%;
+  }
+  .writer {
+    position: static;
+    display: block;
+    margin: 5px auto 0;
+  }
+  .deleteBtn {
+    left: -35px;
+  }
+}
