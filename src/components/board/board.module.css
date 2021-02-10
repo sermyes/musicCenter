@@ -1,11 +1,11 @@
 .container {
-  border: 2px solid rgba(1, 113, 119, 0.6);
   display: flex;
   flex-direction: column;
   border-radius: 5px;
   padding: 5px;
   width: 100%;
   height: 100%;
+  background: #fff;
 }
 
 .notice {
@@ -15,7 +15,6 @@
   flex-basis: 80%;
   background-color: rgba(1, 113, 119, 0.1);
   border: 2px ridge rgba(0, 0, 0, 0.5);
-  border-radius: 5px;
   list-style: none;
   overflow-x: hidden;
 }
@@ -24,5 +23,4 @@
   flex-basis: 20%;
   border: 2px solid rgba(0, 0, 0, 0.5);
   margin-top: 5px;
-  border-radius: 5px;
 }

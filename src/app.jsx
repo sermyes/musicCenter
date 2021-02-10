@@ -55,23 +55,25 @@ function App({ youtube, postRespository }) {
   }, [youtube]);
 
   return (
-    <div className={styles.container}>
-      <Navigation />
+    <div className={`${styles.container} pageContainer`}>
       <section
         className={`mainSection ${styles.section}`}
         style={{ backgroundImage: `url(${backgroundImg.main.url})` }}
+        onWheel={onwheel}
       >
         <Main />
       </section>
       <section
         className={`updatedSection ${styles.updated} ${styles.section}`}
         style={{ backgroundImage: `url(${backgroundImg.updated.url})` }}
+        onWheel={onwheel}
       >
         <UpdatedMusic onVideoClick={onVideoClick} updatedVideo={updatedVideo} />
       </section>
       <section
         className={`listSection ${styles.list} ${styles.section}`}
         style={{ backgroundImage: `url(${backgroundImg.lists.url})` }}
+        onWheel={onwheel}
       >
         <MusicList
           videos={videos}
@@ -82,9 +84,12 @@ function App({ youtube, postRespository }) {
       <section
         className={`requestSection ${styles.section}`}
         style={{ backgroundImage: `url(${backgroundImg.board.url})` }}
+        onWheel={onwheel}
       >
         <MusicRequest postRespository={postRespository} />
       </section>
+
+      <Navigation />
 
       {selectedVideo && (
         <Modal allowScroll={() => {}} onClose={onVideoClick}>

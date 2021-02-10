@@ -1,17 +1,17 @@
 .container {
   width: 75%;
   height: 75%;
-  background-color: rgba(255, 255, 255, 0.9);
-  border-radius: 20px;
-  padding: 0 50px 30px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
   display: flex;
   flex-direction: column;
   position: relative;
+  padding: 10px;
 }
 
 .title {
   padding: 30px 0;
-  color: #007177;
+  color: #fff;
   font-size: 32px;
   font-weight: 700;
   flex-basis: 15%;
@@ -29,6 +29,5 @@
   .container {
     width: 90%;
     height: 70%;
-    padding: 0 0 50px;
   }
 }

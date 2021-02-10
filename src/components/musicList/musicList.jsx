@@ -63,30 +63,32 @@ const MusicList = ({ videos, onVideoClick }) => {
   return (
     <div className={styles.container}>
       <h2 className={styles.title}>Music List</h2>
-      <Slider {...settings} className={styles.slider} ref={sliderRef}>
-        {videos &&
-          videos.map((video) => (
-            <VideoItem
-              key={video.id}
-              video={video}
-              onVideoClick={onVideoClick}
-            />
-          ))}
-      </Slider>
-      <SlideArrow
-        className={styles.slide_prev}
-        icon={faChevronLeft}
-        onClick={() => {
-          sliderRef.current.slickPrev();
-        }}
-      />
-      <SlideArrow
-        className={styles.slide_next}
-        icon={faChevronRight}
-        onClick={() => {
-          sliderRef.current.slickNext();
-        }}
-      />
+      <div className={styles.slider}>
+        <Slider {...settings} ref={sliderRef}>
+          {videos &&
+            videos.map((video) => (
+              <VideoItem
+                key={video.id}
+                video={video}
+                onVideoClick={onVideoClick}
+              />
+            ))}
+        </Slider>
+        <SlideArrow
+          className={styles.slide_prev}
+          icon={faChevronLeft}
+          onClick={() => {
+            sliderRef.current.slickPrev();
+          }}
+        />
+        <SlideArrow
+          className={styles.slide_next}
+          icon={faChevronRight}
+          onClick={() => {
+            sliderRef.current.slickNext();
+          }}
+        />
+      </div>
     </div>
   );
 };
