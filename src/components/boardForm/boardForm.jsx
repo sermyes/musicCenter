@@ -8,24 +8,6 @@ const BoardForm = memo(({ onConfirm, admin }) => {
   const contentRef = useRef();
   const noticeRef = useRef();
 
-  const getDateFormat = () => {
-    const date = new Date();
-    const yyyy = date.getFullYear();
-    const MM = date.getMonth() + 1;
-    const dd = date.getDate();
-    const hh = date.getHours();
-    const mm = date.getMinutes();
-    const ss = date.getSeconds();
-
-    return `${yyyy}/${addzero(MM)}/${addzero(dd)} ${addzero(hh)}:${addzero(
-      mm
-    )}:${addzero(ss)}`;
-  };
-
-  const addzero = (n) => {
-    return n < 10 ? "0" + n : n;
-  };
-
   const resetForm = () => {
     nameRef.current.value = "";
     pswRef.current.value = "";
@@ -39,7 +21,7 @@ const BoardForm = memo(({ onConfirm, admin }) => {
     const psw = pswRef.current.value;
     const content = contentRef.current.value;
     const key = uuidv4();
-    const date = getDateFormat();
+    const date = new Date().getTime();
     const type = noticeRef.current.checked ? "notice" : "post";
 
     if (name === "") {
@@ -68,7 +50,6 @@ const BoardForm = memo(({ onConfirm, admin }) => {
         type: type,
       },
     };
-
     onConfirm(post, key);
     resetForm();
   };

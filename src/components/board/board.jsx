@@ -44,6 +44,7 @@ const Board = ({ onConfirm, onRemove, posts, notices, admin }) => {
                 <BoardItem
                   key={post.key}
                   onRemove={onRemove}
+                  s
                   post={post}
                   admin={admin}
                 />

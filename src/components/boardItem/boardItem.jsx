@@ -36,34 +36,59 @@ const OptionButton = memo(({ post, notice, admin, onRemove }) => {
 });
 
 const BoardItem = memo(({ notice, onRemove, post, admin }) => {
-  const getDate = () => {
-    const date = new Date();
-    const yyyy = date.getFullYear();
-    const MM = date.getMonth() + 1;
-    const dd = date.getDate();
-    return `${yyyy}/${addzero(MM)}/${addzero(dd)}`;
+  const getTime = (date) => {
+    const today = new Date();
+    const timeValue = new Date(date);
+
+    const betweenTime = Math.floor(
+      (today.getTime() - timeValue.getTime()) / 1000 / 60
+    );
+    if (betweenTime < 1) return "방금전";
+    if (betweenTime < 60) {
+      return `${betweenTime}분전`;
+    }
+
+    const betweenTimeHour = Math.floor(betweenTime / 60);
+    if (betweenTimeHour < 24) {
+      return `${betweenTimeHour}시간전`;
+    }
+
+    const betweenTimeDay = Math.floor(betweenTime / 60 / 24);
+    if (betweenTimeDay < 365) {
+      return `${betweenTimeDay}일전`;
+    }
+
+    return `${Math.floor(betweenTimeDay / 365)}년전`;
   };
 
-  function addzero(n) {
-    return n < 10 ? "0" + n : n;
-  }
+  const getNewPost = (date) => {
+    const today = new Date();
+    const timeValue = new Date(date);
+
+    const betweenTimeHour = Math.floor(
+      (today.getTime() - timeValue.getTime()) / 1000 / 60 / 60
+    );
+    if (betweenTimeHour < 24) {
+      return true;
+    } else {
+      return false;
+    }
+  };
 
   return (
     <li className={styles.container}>
       {!notice && (
         <div className={styles.item}>
+          <span className={styles.type}>요청</span>
+          <p className={styles.itemContent}>
+            <span>{post.content}</span>
+            {getNewPost(post.date) && <span className={styles.new}>N</span>}
+          </p>
           <p className={styles.nameWrapper}>
             <span className={styles.name}>{post.name}</span>
             <span className={styles.writer}>작성자</span>
           </p>
-          <p className={styles.itemContent}>
-            <span>{post.content}</span>
-            {post.date.substr(0, 10) === getDate() && (
-              <span className={styles.new}>N</span>
-            )}
-          </p>
-
-          <span className={styles.date}>{post.date}</span>
+          <span className={styles.date}>{getTime(post.date)}</span>
           <OptionButton
             post={post}
             notice={notice}
@@ -77,8 +102,8 @@ const BoardItem = memo(({ notice, onRemove, post, admin }) => {
           <span className={styles.type}>공지</span>
           <span className={styles.noticeContent}>{notice.content}</span>
           <p className={styles.adminWrapper}>
-            <span className={styles.admin}>{notice.name}</span>
-            <span className={styles.writer}>admin</span>
+            <span className={styles.name}>{notice.name}</span>
+            <span className={styles.admin}>admin</span>
           </p>
           <OptionButton
             post={post}

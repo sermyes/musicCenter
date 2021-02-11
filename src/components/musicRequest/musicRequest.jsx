@@ -33,18 +33,22 @@ const MusicRequest = ({ postRespository }) => {
   }, [postRespository]);
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Music Request</h2>
-      <div className={styles.board} id={styles.style}>
-        <Board
-          onConfirm={onConfirm}
-          onRemove={onRemove}
-          posts={posts}
-          notices={notices}
-          admin={admin}
-        />
+    <>
+      <div className={styles.titleContainer}>
+        <h2 className={styles.title}>Music Request</h2>
       </div>
-    </div>
+      <div className={styles.boardContainer}>
+        <div className={styles.board} id={styles.style}>
+          <Board
+            onConfirm={onConfirm}
+            onRemove={onRemove}
+            posts={posts}
+            notices={notices}
+            admin={admin}
+          />
+        </div>
+      </div>
+    </>
   );
 };
 

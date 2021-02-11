@@ -1,33 +1,36 @@
-.container {
-  width: 75%;
-  height: 75%;
-  background-color: rgba(0, 0, 0, 0.4);
-  border-radius: 10px;
+.titleContainer {
   display: flex;
-  flex-direction: column;
-  position: relative;
-  padding: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.title {
+  text-align: center;
+  color: white;
+  font-size: 38px;
+  letter-spacing: 0.8rem;
+  line-height: 34px;
+  font-weight: 700;
+  width: 100%;
+  padding: 20px 0;
+}
+.boardContainer {
+  width: 90%;
+  margin: 0 auto 10px;
+  flex: 1;
 }
 
-.title {
-  padding: 30px 0;
-  color: #fff;
-  font-size: 32px;
-  font-weight: 700;
-  flex-basis: 15%;
-  justify-self: center;
-  text-align: center;
-}
 .board {
+  background-color: rgba(0, 0, 0, 0.4);
   position: relative;
-  flex-basis: 85%;
   width: 100%;
-  height: 85%;
+  height: 100%;
+  flex-direction: column;
+  padding: 10px;
+  display: flex;
 }
 
 @media screen and (max-width: 991px) {
-  .container {
-    width: 90%;
-    height: 70%;
+  .boardContainer {
+    width: 100%;
   }
 }

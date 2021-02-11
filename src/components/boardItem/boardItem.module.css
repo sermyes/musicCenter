@@ -13,35 +13,63 @@
   text-align: center;
   padding: 6px 10px;
   display: flex;
+  align-items: center;
+}
+.notice {
+  font-weight: bold;
 }
 .item {
-  background-color: rgba(1, 113, 119, 0.05);
-  color: rgba(1, 113, 119, 1);
+  color: #000;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   font-size: 12px;
 }
-.nameWrapper {
-  flex-basis: 15%;
+
+.notice {
+  color: red;
+  background: rgba(255, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+}
+.type {
+  flex-basis: 10%;
+  font-weight: bold;
+}
+.noticeContent,
+.itemContent {
+  padding: 0 5px;
+  flex-basis: 55%;
+}
+
+.nameWrapper,
+.adminWrapper {
+  flex-basis: 20%;
   position: relative;
+}
+.adminWrapper {
+  margin-right: 10%;
 }
 .name {
   padding-right: 5px;
 }
-.writer {
+.writer,
+.admin {
   font-size: 10px;
   padding: 2px 4px;
-  letter-spacing: -1px;
+  border-radius: 10px;
+  position: absolute;
+  width: 42px;
+}
+.writer {
+  border: 1px solid rgb(21, 181, 0);
+  color: rgb(21, 181, 0);
+  font-weight: bold;
+}
+.admin {
   border: 1px solid red;
   color: red;
-  border-radius: 15px;
-  position: absolute;
-  width: 40px;
-}
-.itemContent {
-  flex-basis: 55%;
 }
 .date {
-  flex-basis: 20%;
+  flex-basis: 10%;
 }
 .new {
   box-sizing: border-box;
@@ -50,34 +78,13 @@
   font-size: 10px;
   width: 12px;
   line-height: 12px;
-  border-radius: 50%;
+  border-radius: 4px;
   margin-left: 2px;
-  top: -3px;
-  background-color: red;
+  top: -1px;
+  background: rgb(255, 30, 0);
   color: white;
 }
-
-/* item css */
-
-.notice {
-  color: red;
-  background-color: thistle;
-  font-size: 12px;
-  border-bottom: 1px solid rgba(255, 0, 0, 0.6);
-}
-.type {
-  flex-basis: 15%;
-  font-weight: bold;
-}
-.noticeContent {
-  flex-basis: 55%;
-  font-weight: bold;
-}
-.adminWrapper {
-  flex-basis: 20%;
-  position: relative;
-}
-/* notice css */
+/* list item css */
 
 .option {
   text-align: left;
@@ -85,7 +92,6 @@
   flex-basis: 5%;
 }
 .optionBtn {
-  margin: 0 auto;
   cursor: pointer;
   outline: none;
   border: none;
@@ -101,14 +107,13 @@
   border-radius: 50%;
   pointer-events: none;
 }
-
 .deleteBtn {
   top: -4px;
-  left: 65%;
+  left: 15%;
   cursor: pointer;
   outline: none;
   font-weight: bold;
-  border: 2px solid rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 0, 0, 0.6);
   border-radius: 5px;
   position: absolute;
   opacity: 0;
@@ -128,49 +133,18 @@
 /* delete btn css */
 
 @media screen and (max-width: 991px) {
-  .optionBtn {
-    margin: 0;
-  }
-  .deleteBtn {
-    left: 30%;
-  }
-  .nameWrapper {
-    flex-basis: 20%;
-  }
-  .itemContent {
-    flex-basis: 50%;
-  }
-  .date {
-    flex-basis: 20%;
-  }
-  .notice > *,
-  .item > * {
-    margin-right: 5px;
-  }
-}
-
-@media screen and (max-width: 767px) {
-  .type {
-    flex-basis: 20%;
-  }
-  .noticeContent {
-    flex-basis: 60%;
-  }
-  .nameWrapper {
-    flex-basis: 20%;
-  }
-  .itemContent {
-    flex-basis: 60%;
-  }
-  .date {
-    flex-basis: 15%;
-  }
+  .admin,
   .writer {
+    margin-top: 2px;
+    margin: auto;
     position: static;
     display: block;
-    margin: 5px auto 0;
   }
-  .deleteBtn {
-    left: -35px;
+  .adminWrapper,
+  .nameWrapper {
+    flex-basis: 15%;
+  }
+  .option {
+    flex-basis: 10%;
   }
 }

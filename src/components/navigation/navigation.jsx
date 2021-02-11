@@ -126,7 +126,9 @@ const Navigation = memo((props) => {
 
   useEffect(() => {
     if (!loading) {
-      window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
+      const idx = Math.floor(window.scrollY / window.innerHeight);
+      const menu = document.querySelectorAll(".menu");
+      menu[idx].classList.add("active");
       setLoading(true);
     }
 
@@ -152,7 +154,7 @@ const Navigation = memo((props) => {
         <FontAwesomeIcon className={styles.icon} icon={faBars} />
       </button>
       <ul className={styles.ul} ref={ulRef}>
-        <li className={`${styles.menu} menu active`} onClick={onClick}>
+        <li className={`${styles.menu} menu`} onClick={onClick}>
           <span className={styles.menuTitle}>main</span>
         </li>
         <li className={`${styles.menu} menu`} onClick={onClick}>

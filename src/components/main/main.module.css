@@ -1,10 +1,14 @@
 .container {
   width: 100%;
-  height: 100vh;
+  height: 100%;
   text-align: center;
-  padding-top: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-
+.titleContainer {
+  flex-basis: 54%;
+}
 .title {
   font-weight: 700;
   font-size: 58px;
@@ -12,7 +16,7 @@
   letter-spacing: 0.2em;
   line-height: 1.2em;
   color: #fff;
-  margin-bottom: 60px;
+  margin-bottom: 50px;
 }
 
 .description {
@@ -23,25 +27,27 @@
   text-transform: uppercase;
   display: block;
   line-height: 20px;
-  margin-bottom: 100px;
 }
-
+.btnContainer {
+  display: flex;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  flex-basis: 10%;
+}
 .btn {
   border: 2px solid #fff;
   background: #fff;
   width: 200px;
+  height: 80px;
   color: #00adb5;
-  display: inline-block;
+  display: block;
   font-size: 20px;
   padding: 15px 0;
   font-weight: 400;
   line-height: 1.8;
   border-radius: 30px;
   cursor: pointer;
-  position: absolute;
-  left: 50%;
-  bottom: 15%;
-  transform: translate(-50%, -50%);
   outline: none;
 }
 
@@ -51,10 +57,4 @@
 
 .icon {
   margin-right: 10px;
-}
-
-@media screen and (max-width: 991px) {
-  .container {
-    padding: 200px 10px 0;
-  }
 }

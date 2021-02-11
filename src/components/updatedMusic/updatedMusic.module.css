@@ -1,27 +1,31 @@
-.container {
-  width: 75%;
-  height: 75%;
-  background-color: rgba(0, 0, 0, 0.4);
-  padding: 0 50px;
+.titleContainer {
   display: flex;
-  flex-direction: column;
-  align-content: space-between;
-  position: relative;
-  border-radius: 10px;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-basis: 25%;
 }
 .title {
-  padding: 80px 0;
   text-align: center;
   color: white;
-  font-size: 32px;
+  font-size: 38px;
+  line-height: 34px;
+  letter-spacing: 0.8rem;
   font-weight: 700;
-  flex-basis: 35%;
-  justify-self: center;
+  width: 100%;
+  padding: 50px 0;
 }
-
+.listContainer {
+  width: 90%;
+  margin: 0 auto 10px;
+  flex: 1;
+}
 .list {
+  background-color: rgba(0, 0, 0, 0.4);
   display: flex;
+  border-radius: 10px;
   justify-content: space-between;
+  align-items: center;
+  padding: 50px 20px;
 }
 
 .list > div {
@@ -29,50 +33,17 @@
 }
 
 @media screen and (max-width: 991px) {
-  .container {
-    width: 90%;
-    height: 80%;
+  .listContainer {
+    width: 100%;
   }
 }
 
 @media screen and (max-width: 767px) {
-  .container {
-    padding: 0 30px 15px;
-  }
   .list > div {
     box-sizing: border-box;
     flex-basis: 49%;
   }
   .list > div:nth-child(3) {
     display: none;
-  }
-}
-
-@media screen and (max-width: 591px) {
-  .container {
-    height: 90%;
-  }
-  .title {
-    flex-basis: 10%;
-    padding: 50px 0;
-  }
-  .list {
-    flex-basis: 90%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    margin: 0 auto;
-    width: 75%;
-    height: 75%;
-  }
-  .list > div {
-    margin-bottom: 10px;
-    flex-basis: 25%;
-  }
-}
-
-@media screen and (max-width: 450px) {
-  .container {
-    height: 80%;
   }
 }

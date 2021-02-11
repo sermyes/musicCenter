@@ -12,14 +12,18 @@ const Main = memo((props) => {
 
   return (
     <div className={styles.container}>
-      <h1 className={styles.title}>Music Center</h1>
-      <p className={styles.description}>
-        Free Youtube Music, Melon Top100, Club Music, Show me the money ...
-      </p>
-      <button className={styles.btn} onClick={onClick}>
-        <FontAwesomeIcon className={styles.icon} icon={faMusic} />
-        Listen Music
-      </button>
+      <div className={styles.titleContainer}>
+        <h1 className={styles.title}>Music Center</h1>
+        <p className={styles.description}>
+          Free Youtube Music, Melon Top100, Club Music, Show me the money ...
+        </p>
+      </div>
+      <div className={styles.btnContainer}>
+        <button className={styles.btn} onClick={onClick}>
+          <FontAwesomeIcon className={styles.icon} icon={faMusic} />
+          Listen Music
+        </button>
+      </div>
     </div>
   );
 });

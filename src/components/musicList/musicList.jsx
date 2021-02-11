@@ -49,47 +49,43 @@ const MusicList = ({ videos, onVideoClick }) => {
           dots: false,
         },
       },
-      {
-        breakpoint: 591,
-        settings: {
-          slidesToShow: 1,
-          slidesToScroll: 1,
-          dots: false,
-        },
-      },
     ],
   };
 
   return (
-    <div className={styles.container}>
-      <h2 className={styles.title}>Music List</h2>
-      <div className={styles.slider}>
-        <Slider {...settings} ref={sliderRef}>
-          {videos &&
-            videos.map((video) => (
-              <VideoItem
-                key={video.id}
-                video={video}
-                onVideoClick={onVideoClick}
-              />
-            ))}
-        </Slider>
-        <SlideArrow
-          className={styles.slide_prev}
-          icon={faChevronLeft}
-          onClick={() => {
-            sliderRef.current.slickPrev();
-          }}
-        />
-        <SlideArrow
-          className={styles.slide_next}
-          icon={faChevronRight}
-          onClick={() => {
-            sliderRef.current.slickNext();
-          }}
-        />
+    <>
+      <div className={styles.titleContainer}>
+        <h2 className={styles.title}>Music List</h2>
       </div>
-    </div>
+      <div className={styles.sliderContainer}>
+        <div className={styles.slider}>
+          <Slider {...settings} ref={sliderRef}>
+            {videos &&
+              videos.map((video) => (
+                <VideoItem
+                  key={video.id}
+                  video={video}
+                  onVideoClick={onVideoClick}
+                />
+              ))}
+          </Slider>
+          <SlideArrow
+            className={styles.slide_prev}
+            icon={faChevronLeft}
+            onClick={() => {
+              sliderRef.current.slickPrev();
+            }}
+          />
+          <SlideArrow
+            className={styles.slide_next}
+            icon={faChevronRight}
+            onClick={() => {
+              sliderRef.current.slickNext();
+            }}
+          />
+        </div>
+      </div>
+    </>
   );
 };
 
