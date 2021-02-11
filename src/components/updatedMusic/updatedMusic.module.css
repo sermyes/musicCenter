@@ -8,8 +8,8 @@
   text-align: center;
   color: white;
   font-size: 38px;
-  line-height: 34px;
-  letter-spacing: 0.8rem;
+  line-height: 40px;
+  letter-spacing: 0.6rem;
   font-weight: 700;
   width: 100%;
   padding: 50px 0;
@@ -36,6 +36,9 @@
   .listContainer {
     width: 100%;
   }
+  .titleContainer {
+    flex-basis: 30%;
+  }
 }
 
 @media screen and (max-width: 767px) {
@@ -45,5 +48,15 @@
   }
   .list > div:nth-child(3) {
     display: none;
+  }
+}
+
+@media screen and (max-width: 591px) {
+  .container {
+    width: 80%;
+    height: 65%;
+  }
+  .titleContainer {
+    flex-basis: 40%;
   }
 }
