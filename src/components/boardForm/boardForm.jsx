@@ -68,7 +68,14 @@ const BoardForm = memo(({ onConfirm, admin }) => {
             ref={nameRef}
           />
           <label htmlFor="psw">비밀번호</label>
-          <input type="password" id="psw" required ref={pswRef} />
+          <input
+            type="password"
+            id="psw"
+            minLength="1"
+            maxLength="10"
+            required
+            ref={pswRef}
+          />
           <label htmlFor="notice" className={styles.notice}>
             공지
           </label>
