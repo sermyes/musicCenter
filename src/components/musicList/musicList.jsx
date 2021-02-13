@@ -4,19 +4,11 @@ import styles from "./musicList.module.css";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faChevronRight,
-  faChevronLeft,
-} from "@fortawesome/free-solid-svg-icons";
 
-const SlideArrow = (props) => {
+const SlideArrow = ({ icon, onClick, className }) => {
   return (
-    <button
-      onClick={props.onClick}
-      className={`${styles.slide_arrow} ${props.className}`}
-    >
-      <FontAwesomeIcon className={styles.icon} icon={props.icon} />
+    <button onClick={onClick} className={`${styles.slide_arrow} ${className}`}>
+      <i className={`${styles.icon} fas ${icon}`} />
     </button>
   );
 };
@@ -71,14 +63,14 @@ const MusicList = ({ videos, onVideoClick }) => {
           </Slider>
           <SlideArrow
             className={styles.slide_prev}
-            icon={faChevronLeft}
+            icon={`fa-chevron-left`}
             onClick={() => {
               sliderRef.current.slickPrev();
             }}
           />
           <SlideArrow
             className={styles.slide_next}
-            icon={faChevronRight}
+            icon={`fa-chevron-right`}
             onClick={() => {
               sliderRef.current.slickNext();
             }}

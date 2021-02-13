@@ -1,10 +1,9 @@
 import React, { memo, useEffect, useRef, useState, useCallback } from "react";
 import styles from "./navigation.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBars } from "@fortawesome/free-solid-svg-icons";
 
 const Navigation = memo((props) => {
-  const ulRef = useRef();
+  const wrapperRef = useRef();
+  const iconRef = useRef();
   const [active, setActive] = useState(false);
   const [isScroll, setIsScroll] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -37,14 +36,20 @@ const Navigation = memo((props) => {
 
   const onMui = (e) => {
     e.preventDefault();
+    const icon = document.querySelector(".icon");
     if (active) {
-      ulRef.current.style.height = `0px`;
+      wrapperRef.current.classList.remove("on");
+      icon.classList.add("fa-bars");
+      icon.classList.remove("fa-times");
       setActive(false);
     } else {
-      ulRef.current.style.height = `140px`;
+      wrapperRef.current.classList.add("on");
+      icon.classList.remove("fa-bars");
+      icon.classList.add("fa-times");
       setActive(true);
     }
   };
+  // MUI
 
   const wheelHandler = useCallback(
     (e) => {
@@ -151,22 +156,24 @@ const Navigation = memo((props) => {
   return (
     <nav className={styles.nav}>
       <button className={styles.btn} onClick={onMui}>
-        <FontAwesomeIcon className={styles.icon} icon={faBars} />
+        <i className={`${styles.icon} icon fas fa-bars`} ref={iconRef}></i>
       </button>
-      <ul className={styles.ul} ref={ulRef}>
-        <li className={`${styles.menu} menu`} onClick={onClick}>
-          <span className={styles.menuTitle}>main</span>
-        </li>
-        <li className={`${styles.menu} menu`} onClick={onClick}>
-          <span className={styles.menuTitle}>update</span>
-        </li>
-        <li className={`${styles.menu} menu`} onClick={onClick}>
-          <span className={styles.menuTitle}>list</span>
-        </li>
-        <li className={`${styles.menu} menu`} onClick={onClick}>
-          <span className={styles.menuTitle}>request</span>
-        </li>
-      </ul>
+      <div className={`${styles.wrapper} mui`} ref={wrapperRef}>
+        <ul className={styles.ul}>
+          <li className={`${styles.menu} menu`} onClick={onClick}>
+            <span className={styles.menuTitle}>main</span>
+          </li>
+          <li className={`${styles.menu} menu`} onClick={onClick}>
+            <span className={styles.menuTitle}>update</span>
+          </li>
+          <li className={`${styles.menu} menu`} onClick={onClick}>
+            <span className={styles.menuTitle}>list</span>
+          </li>
+          <li className={`${styles.menu} menu`} onClick={onClick}>
+            <span className={styles.menuTitle}>request</span>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 });

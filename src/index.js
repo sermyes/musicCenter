@@ -5,6 +5,7 @@ import App from './app';
 import axios from "axios";
 import Youtube from './service/youtube';
 import PostRespository from './service/post_repository';
+import '@fortawesome/fontawesome-free/js/all.js';
 
 const client = axios.create({
   baseURL: "https://youtube.googleapis.com/youtube/v3",
