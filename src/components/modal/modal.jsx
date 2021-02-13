@@ -1,8 +1,6 @@
 import React, { useEffect } from "react";
 import Portal from "../portal/portal";
 import styles from "./modal.module.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faTimes } from "@fortawesome/free-solid-svg-icons";
 
 function Modal({ children, onClose }) {
   useEffect(() => {
@@ -15,7 +13,7 @@ function Modal({ children, onClose }) {
       <div className={styles.wrapper}>
         <div className={styles.inner}>
           <button className={styles.iconBtn} onClick={() => onClose(null)}>
-            <FontAwesomeIcon className={styles.icon} icon={faTimes} />
+            <i className={`${styles.icon} fas fa-times`} />
           </button>
           {children}
         </div>
