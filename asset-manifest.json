@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/musicCenter/static/css/main.3af9b9ca.chunk.css",
-    "main.js": "/musicCenter/static/js/main.63b6107d.chunk.js",
-    "main.js.map": "/musicCenter/static/js/main.63b6107d.chunk.js.map",
+    "main.css": "/musicCenter/static/css/main.0580b68e.chunk.css",
+    "main.js": "/musicCenter/static/js/main.f9c85cb7.chunk.js",
+    "main.js.map": "/musicCenter/static/js/main.f9c85cb7.chunk.js.map",
     "runtime-main.js": "/musicCenter/static/js/runtime-main.d516213b.js",
     "runtime-main.js.map": "/musicCenter/static/js/runtime-main.d516213b.js.map",
     "static/css/2.cc4fcb8b.chunk.css": "/musicCenter/static/css/2.cc4fcb8b.chunk.css",
-    "static/js/2.3fc5ddde.chunk.js": "/musicCenter/static/js/2.3fc5ddde.chunk.js",
-    "static/js/2.3fc5ddde.chunk.js.map": "/musicCenter/static/js/2.3fc5ddde.chunk.js.map",
+    "static/js/2.e01c73d6.chunk.js": "/musicCenter/static/js/2.e01c73d6.chunk.js",
+    "static/js/2.e01c73d6.chunk.js.map": "/musicCenter/static/js/2.e01c73d6.chunk.js.map",
     "index.html": "/musicCenter/index.html",
     "static/css/2.cc4fcb8b.chunk.css.map": "/musicCenter/static/css/2.cc4fcb8b.chunk.css.map",
-    "static/css/main.3af9b9ca.chunk.css.map": "/musicCenter/static/css/main.3af9b9ca.chunk.css.map",
-    "static/js/2.3fc5ddde.chunk.js.LICENSE.txt": "/musicCenter/static/js/2.3fc5ddde.chunk.js.LICENSE.txt",
+    "static/css/main.0580b68e.chunk.css.map": "/musicCenter/static/css/main.0580b68e.chunk.css.map",
+    "static/js/2.e01c73d6.chunk.js.LICENSE.txt": "/musicCenter/static/js/2.e01c73d6.chunk.js.LICENSE.txt",
     "static/media/slick-theme.css": "/musicCenter/static/media/slick.c94f7671.ttf"
   },
   "entrypoints": [
     "static/js/runtime-main.d516213b.js",
     "static/css/2.cc4fcb8b.chunk.css",
-    "static/js/2.3fc5ddde.chunk.js",
-    "static/css/main.3af9b9ca.chunk.css",
-    "static/js/main.63b6107d.chunk.js"
+    "static/js/2.e01c73d6.chunk.js",
+    "static/css/main.0580b68e.chunk.css",
+    "static/js/main.f9c85cb7.chunk.js"
   ]
 }
