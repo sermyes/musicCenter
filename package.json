@@ -1,5 +1,5 @@
 {
-  "name": "template",
+  "name": "music-center",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -17,7 +17,6 @@
     "react-lightbox-component": "^1.2.1",
     "react-scripts": "4.0.1",
     "react-slick": "^0.27.14",
-    "slick-carousel": "^1.8.1",
     "uuid": "^8.3.2"
   },
   "scripts": {

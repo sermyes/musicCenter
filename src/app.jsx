@@ -41,7 +41,11 @@ function App({ youtube, postRespository }) {
       .playList() //
       .then((videos) => {
         setVideos(
-          videos.filter((video) => video.snippet.title !== "Deleted video")
+          videos.filter(
+            (video) =>
+              video.snippet.title !== "Deleted video" &&
+              video.snippet.title !== "Private video"
+          )
         );
         setUpdatedVideo(
           videos
