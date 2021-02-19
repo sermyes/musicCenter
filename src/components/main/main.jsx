@@ -18,9 +18,17 @@ const Main = memo((props) => {
           </p>
         </div>
         <div className={styles.contactContainer}>
-          <a href="mailto:sermyes@gmail.com" className={styles.email}>
-            <i className={`${styles.iconEmail} fas fa-envelope`} />
-            sermyes@gmail.com
+          <a href="mailto:sermyes@gmail.com" className={styles.contact}>
+            <i className={`${styles.contact_icon} fas fa-envelope`} />
+          </a>
+          <a href="tel:010-6807-5339" className={styles.contact}>
+            <i className={`${styles.contact_icon} fas fa-phone`} />
+          </a>
+          <a
+            href="https://github.com/sermyes/musicCenter"
+            className={styles.contact}
+          >
+            <i className={`${styles.contact_icon} fab fa-github`} />
           </a>
         </div>
       </div>

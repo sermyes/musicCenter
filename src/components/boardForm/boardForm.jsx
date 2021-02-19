@@ -6,13 +6,20 @@ const BoardForm = memo(({ onConfirm, admin }) => {
   const nameRef = useRef();
   const pswRef = useRef();
   const contentRef = useRef();
-  const noticeRef = useRef();
+  const typeRef = useRef();
+
+  const onChange = (e) => {
+    if (e.target.value === "notice") {
+      e.target.style.cssText = `background: rgba(255, 0, 0, 0.1); color: red;`;
+    } else {
+      e.target.style.cssText = `background: #fff; color: #000;`;
+    }
+  };
 
   const resetForm = () => {
     nameRef.current.value = "";
     pswRef.current.value = "";
     contentRef.current.value = "";
-    noticeRef.current.checked = false;
   };
 
   const onClick = (e) => {
@@ -22,7 +29,7 @@ const BoardForm = memo(({ onConfirm, admin }) => {
     const content = contentRef.current.value;
     const key = uuidv4();
     const date = new Date().getTime();
-    const type = noticeRef.current.checked ? "notice" : "post";
+    const type = typeRef.current.value;
 
     if (name === "") {
       window.alert("작성자를 입력하세요.");
@@ -57,6 +64,26 @@ const BoardForm = memo(({ onConfirm, admin }) => {
   return (
     <form>
       <fieldset className={styles.input}>
+        <div className={styles.typeContainer}>
+          <select
+            name="type"
+            id="type"
+            className={styles.type}
+            defaultValue="post"
+            ref={typeRef}
+            onChange={onChange}
+          >
+            <option value="notice" className={styles.notice}>
+              공지
+            </option>
+            <option value="post" className={styles.request}>
+              요청
+            </option>
+            <option value="question" className={styles.question}>
+              문의
+            </option>
+          </select>
+        </div>
         <div className={styles.info}>
           <label htmlFor="id">작성자</label>
           <input
@@ -76,10 +103,6 @@ const BoardForm = memo(({ onConfirm, admin }) => {
             required
             ref={pswRef}
           />
-          <label htmlFor="notice" className={styles.notice}>
-            공지
-          </label>
-          <input type="checkbox" id="notice" ref={noticeRef} />
         </div>
         <div className={styles.wrapper}>
           <textarea

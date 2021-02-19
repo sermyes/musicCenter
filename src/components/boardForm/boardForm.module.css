@@ -4,13 +4,36 @@
   padding: 5px;
   flex-direction: column;
 }
+.typeContainer {
+  flex-basis: 20%;
+  margin-bottom: 5px;
+}
 .info {
   flex-basis: 20%;
   margin-bottom: 10px;
 }
 .wrapper {
-  flex-basis: 80%;
+  flex-basis: 60%;
   position: relative;
+}
+.type {
+  outline: none;
+  min-width: 150px;
+  font-weight: bold;
+}
+.notice {
+  background: rgba(255, 0, 0, 0.1);
+  color: red;
+}
+.question,
+.request {
+  background: #fff;
+  color: #000;
+}
+.request,
+.question,
+.notice {
+  font-weight: bold;
 }
 .info > label {
   margin-right: 5px;
@@ -23,14 +46,6 @@
   padding: 1px 5px;
   outline: none;
   min-width: 80px;
-}
-.notice {
-  color: red;
-}
-input[type="checkbox"] {
-  outline: none;
-  position: relative;
-  top: 2px;
 }
 .content {
   resize: none;

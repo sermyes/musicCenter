@@ -52,26 +52,34 @@
   line-height: 20px;
 }
 .contactContainer {
-  color: #00adb5;
   display: flex;
   justify-content: center;
   border: 2px solid #fff;
-  padding: 15px 30px 15px 15px;
+  border-left: none;
+  border-right: none;
+  padding: 20px;
+  background: transparent;
 }
 .contact {
+  width: 50px;
+  height: 50px;
+  line-height: 50px;
+  border-radius: 50%;
   background: #fff;
+  opacity: 0.8;
+  padding-top: 3px;
 }
-.iconEmail {
-  margin-right: 10px;
-}
-.email {
+.contact:not(:first-child) {
   margin-left: 15px;
-  text-decoration: none;
-  color: #fff;
 }
-.email:hover {
-  text-decoration: underline;
+.contact:hover {
+  opacity: 1;
 }
+.contact_icon {
+  font-size: 24px;
+  color: #00adb5;
+}
+
 .btnContainer {
   display: flex;
   text-align: center;

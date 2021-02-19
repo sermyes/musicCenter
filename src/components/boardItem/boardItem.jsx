@@ -36,6 +36,7 @@ const OptionButton = memo(({ post, notice, admin, onRemove }) => {
 });
 
 const BoardItem = memo(({ notice, onRemove, post, admin }) => {
+  const type = post && post.type;
   const getTime = (date) => {
     const today = new Date();
     const timeValue = new Date(date);
@@ -79,7 +80,9 @@ const BoardItem = memo(({ notice, onRemove, post, admin }) => {
     <li className={styles.container}>
       {!notice && (
         <div className={styles.item}>
-          <span className={styles.type}>요청</span>
+          <span className={styles.type}>
+            {type === "post" ? "요청" : "문의"}
+          </span>
           <p className={styles.itemContent}>
             <span>{post.content}</span>
             {getNewPost(post.date) && <span className={styles.new}>N</span>}
