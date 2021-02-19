@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/musicCenter/static/css/main.64604f27.chunk.css",
-    "main.js": "/musicCenter/static/js/main.973fc3dd.chunk.js",
-    "main.js.map": "/musicCenter/static/js/main.973fc3dd.chunk.js.map",
+    "main.css": "/musicCenter/static/css/main.4d60c6ac.chunk.css",
+    "main.js": "/musicCenter/static/js/main.d779f055.chunk.js",
+    "main.js.map": "/musicCenter/static/js/main.d779f055.chunk.js.map",
     "runtime-main.js": "/musicCenter/static/js/runtime-main.fb1be84f.js",
     "runtime-main.js.map": "/musicCenter/static/js/runtime-main.fb1be84f.js.map",
-    "static/js/2.2558854c.chunk.js": "/musicCenter/static/js/2.2558854c.chunk.js",
-    "static/js/2.2558854c.chunk.js.map": "/musicCenter/static/js/2.2558854c.chunk.js.map",
+    "static/js/2.bac0871d.chunk.js": "/musicCenter/static/js/2.bac0871d.chunk.js",
+    "static/js/2.bac0871d.chunk.js.map": "/musicCenter/static/js/2.bac0871d.chunk.js.map",
     "index.html": "/musicCenter/index.html",
-    "static/css/main.64604f27.chunk.css.map": "/musicCenter/static/css/main.64604f27.chunk.css.map",
-    "static/js/2.2558854c.chunk.js.LICENSE.txt": "/musicCenter/static/js/2.2558854c.chunk.js.LICENSE.txt"
+    "static/css/main.4d60c6ac.chunk.css.map": "/musicCenter/static/css/main.4d60c6ac.chunk.css.map",
+    "static/js/2.bac0871d.chunk.js.LICENSE.txt": "/musicCenter/static/js/2.bac0871d.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.fb1be84f.js",
-    "static/js/2.2558854c.chunk.js",
-    "static/css/main.64604f27.chunk.css",
-    "static/js/main.973fc3dd.chunk.js"
+    "static/js/2.bac0871d.chunk.js",
+    "static/css/main.4d60c6ac.chunk.css",
+    "static/js/main.d779f055.chunk.js"
   ]
 }
