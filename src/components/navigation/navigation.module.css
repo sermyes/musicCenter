@@ -14,13 +14,15 @@
 }
 
 .menu {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
   cursor: pointer;
-  width: 15px;
-  height: 15px;
+  width: 30px;
+  height: 30px;
   background: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
+  border-radius: 5px;
   transition: background 0.2s ease-in-out;
 }
 .menu:not(:last-child) {
@@ -32,22 +34,21 @@
 :global .active {
   background: rgba(255, 255, 255, 1);
 }
-
-.menuTitle {
+.ico,
+.text {
   display: block;
-  width: 150px;
-  font-size: 14px;
-  color: white;
-  position: absolute;
-  top: -3px;
-  left: 22px;
-  pointer-events: none;
-  opacity: 0;
-  transition: all 0.4s ease-in-out;
+  font-size: 20px;
+  color: #007177;
+  background: transparent;
+  padding: 0px 0px 0px 0px;
 }
-
-.menu:hover .menuTitle {
-  opacity: 1;
+.text {
+  font-weight: bold;
+  font-size: 17px;
+  letter-spacing: -1px;
+}
+.muiText {
+  display: none;
 }
 
 .btn {
@@ -92,7 +93,7 @@
   }
   .ul {
     transform: translateX(-105%);
-    width: 40%;
+    width: 30%;
     height: 100vh;
     background: #fff;
     display: flex;
@@ -114,16 +115,13 @@
   .menu:hover {
     opacity: 1;
   }
-  .menuTitle {
-    width: 100%;
-    position: static;
-    display: block;
-    font-size: 18px;
-    line-height: 22px;
-    color: #077177;
-    opacity: 1;
-    font-weight: bold;
+  .ico {
+    display: none;
   }
+  .muiText {
+    display: block;
+  }
+
   :global .menu.active {
     opacity: 1;
   }
@@ -134,11 +132,5 @@
   :global .mui.on > ul {
     transform: translateX(0);
     opacity: 1;
-  }
-}
-
-@media screen and (max-width: 591px) {
-  .ul {
-    width: 50%;
   }
 }

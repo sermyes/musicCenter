@@ -2,18 +2,19 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './app';
-import axios from "axios";
+import axios from 'axios';
 import Youtube from './service/youtube';
 import PostRespository from './service/post_repository';
+import firebaseApp from './service/firebase';
 import '@fortawesome/fontawesome-free/js/all.js';
 
 const client = axios.create({
-  baseURL: "https://youtube.googleapis.com/youtube/v3",
-  params: { key: process.env.REACT_APP_YOUTUBE_API_KEY },
+  baseURL: 'https://youtube.googleapis.com/youtube/v3',
+  params: { key: process.env.REACT_APP_YOUTUBE_API_KEY }
 });
 
 const youtube = new Youtube(client);
-const postRespository = new PostRespository();
+const postRespository = new PostRespository(firebaseApp);
 
 ReactDOM.render(
   <React.StrictMode>
@@ -21,4 +22,3 @@ ReactDOM.render(
   </React.StrictMode>,
   document.getElementById('root')
 );
-

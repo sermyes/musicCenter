@@ -1,5 +1,5 @@
-import React, { useCallback, useEffect, useRef, useState } from "react";
-import styles from "./simpleSlider.module.css";
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+import styles from './simpleSlider.module.css';
 
 const SimpleSlider = ({ settings, children }) => {
   const [loading, setLoading] = useState(false);
@@ -37,7 +37,7 @@ const SimpleSlider = ({ settings, children }) => {
       return;
     }
 
-    currentPosition = currentPosition.replace(/[^0-9]/g, "");
+    currentPosition = currentPosition.replace(/[^0-9]/g, '');
 
     for (let i = 1; i < slideLength; i++) {
       if (width * i >= currentPosition) {
@@ -51,8 +51,8 @@ const SimpleSlider = ({ settings, children }) => {
   };
 
   const createDots = useCallback(() => {
-    const dots = document.querySelector(".simple__dots");
-    dots.innerHTML = "";
+    const dots = document.querySelector('.simple__dots');
+    dots.innerHTML = '';
 
     if (!setting.current.onDots) {
       return;
@@ -66,8 +66,8 @@ const SimpleSlider = ({ settings, children }) => {
     const initIndex = currentIndex;
 
     for (let i = 0; i < dotLength; i++) {
-      const dot = document.createElement("li");
-      dot.classList.add("simple__dot");
+      const dot = document.createElement('li');
+      dot.classList.add('simple__dot');
       dots.appendChild(dot);
     }
     onActive(initIndex);
@@ -87,9 +87,9 @@ const SimpleSlider = ({ settings, children }) => {
   const onActive = (index) => {
     const targetDot = dotsRef.current.childNodes[index];
     dotsRef.current.childNodes.forEach((dot) => {
-      dot.classList.remove("active");
+      dot.classList.remove('active');
     });
-    targetDot.classList.add("active");
+    targetDot.classList.add('active');
   };
 
   const onPrevClick = (e) => {
@@ -113,7 +113,7 @@ const SimpleSlider = ({ settings, children }) => {
   };
 
   const onDotClick = (e) => {
-    if (!e.target.matches(".simple__dot")) {
+    if (!e.target.matches('.simple__dot')) {
       return;
     }
 
@@ -162,7 +162,7 @@ const SimpleSlider = ({ settings, children }) => {
     }
 
     const updated = { ...newSetting };
-    updated["responsive"] = setting.current.responsive;
+    updated['responsive'] = setting.current.responsive;
     setting.current = updated;
 
     createSlide();
@@ -175,10 +175,10 @@ const SimpleSlider = ({ settings, children }) => {
       setLoading(true);
     }
 
-    window.addEventListener("resize", changeSettings);
+    window.addEventListener('resize', changeSettings);
 
     return () => {
-      window.removeEventListener("resize", changeSettings);
+      window.removeEventListener('resize', changeSettings);
     };
   }, [changeSettings, loading, slideRef]);
 
@@ -199,7 +199,7 @@ const SimpleSlider = ({ settings, children }) => {
             <i className={`${styles.icon} fas fa-chevron-left`}></i>
           </button>
           <button className={styles.next} ref={nextRef} onClick={onNextClick}>
-            <i className={`${styles.icon} fas fa-chevron-right`}></i>
+            <i className={`${styles.icon} fa-solid fa-comment`}></i>
           </button>
         </div>
       )}

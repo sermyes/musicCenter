@@ -1,36 +1,17 @@
-import React, { useEffect, useState } from "react";
-import styles from "./app.module.css";
-import Main from "./components/main/main";
-import UpdatedMusic from "./components/updatedMusic/updatedMusic";
-import MusicList from "./components/musicList/musicList";
-import MusicRequest from "./components/musicRequest/musicRequest";
-import Modal from "./components/modal/modal";
-import VideoDetail from "./components/videoDetail/videoDetail";
-import Navigation from "./components/navigation/navigation";
+import React, { useEffect, useState } from 'react';
+import styles from './app.module.css';
+import Main from './components/main/main';
+import UpdatedMusic from './components/updatedMusic/updatedMusic';
+import MusicList from './components/musicList/musicList';
+import MusicRequest from './components/musicRequest/musicRequest';
+import Modal from './components/modal/modal';
+import VideoDetail from './components/videoDetail/videoDetail';
+import Navigation from './components/navigation/navigation';
 
 function App({ youtube, postRespository }) {
   const [videos, setVideos] = useState([]);
   const [selectedVideo, setSelectedVideo] = useState(null);
   const [updatedVideo, setUpdatedVideo] = useState([]);
-
-  const backgroundImg = {
-    main: {
-      url:
-        "https://res.cloudinary.com/sermyes/image/upload/v1610853343/music-center/bg_1_akmekt.jpg",
-    },
-    updated: {
-      url:
-        "https://res.cloudinary.com/sermyes/image/upload/v1610853344/music-center/bg_2_x13ptv.jpg",
-    },
-    lists: {
-      url:
-        "https://res.cloudinary.com/sermyes/image/upload/v1610853343/music-center/bg_3_zqa1oy.jpg",
-    },
-    board: {
-      url:
-        "https://res.cloudinary.com/sermyes/image/upload/v1610853343/music-center/bg_4_mzc7pc.jpg",
-    },
-  };
 
   const onVideoClick = (video) => {
     setSelectedVideo(video);
@@ -43,8 +24,8 @@ function App({ youtube, postRespository }) {
         setVideos(
           videos.filter(
             (video) =>
-              video.snippet.title !== "Deleted video" &&
-              video.snippet.title !== "Private video"
+              video.snippet.title !== 'Deleted video' &&
+              video.snippet.title !== 'Private video'
           )
         );
         setUpdatedVideo(
@@ -61,22 +42,19 @@ function App({ youtube, postRespository }) {
   return (
     <div className={`${styles.container} pageContainer`}>
       <section
-        className={`mainSection ${styles.section}`}
-        style={{ backgroundImage: `url(${backgroundImg.main.url})` }}
+        className={`mainSection ${styles.section} ${styles.main}`}
         onWheel={onwheel}
       >
         <Main />
       </section>
       <section
         className={`updatedSection ${styles.updated} ${styles.section}`}
-        style={{ backgroundImage: `url(${backgroundImg.updated.url})` }}
         onWheel={onwheel}
       >
         <UpdatedMusic onVideoClick={onVideoClick} updatedVideo={updatedVideo} />
       </section>
       <section
         className={`listSection ${styles.list} ${styles.section}`}
-        style={{ backgroundImage: `url(${backgroundImg.lists.url})` }}
         onWheel={onwheel}
       >
         <MusicList
@@ -86,8 +64,7 @@ function App({ youtube, postRespository }) {
         />
       </section>
       <section
-        className={`requestSection ${styles.section}`}
-        style={{ backgroundImage: `url(${backgroundImg.board.url})` }}
+        className={`requestSection ${styles.section} ${styles.request}`}
         onWheel={onwheel}
       >
         <MusicRequest postRespository={postRespository} />

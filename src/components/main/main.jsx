@@ -1,11 +1,11 @@
-import React, { memo } from "react";
-import styles from "./main.module.css";
+import React, { memo } from 'react';
+import styles from './main.module.css';
 
 const Main = memo((props) => {
   const onClick = () => {
-    const updatedSection = document.querySelector(".updatedSection");
+    const updatedSection = document.querySelector('.updatedSection');
     const location = updatedSection.offsetTop;
-    window.scrollTo({ top: location, left: 0, behavior: "smooth" });
+    window.scrollTo({ top: location, left: 0, behavior: 'smooth' });
   };
 
   return (
@@ -18,14 +18,14 @@ const Main = memo((props) => {
           </p>
         </div>
         <div className={styles.contactContainer}>
-          <a href="mailto:sermyes@gmail.com" className={styles.contact}>
+          <a href='mailto:sermyes@gmail.com' className={styles.contact}>
             <i className={`${styles.contact_icon} fas fa-envelope`} />
           </a>
-          <a href="tel:010-6807-5339" className={styles.contact}>
+          <a href='tel:010-6807-5339' className={styles.contact}>
             <i className={`${styles.contact_icon} fas fa-phone`} />
           </a>
           <a
-            href="https://github.com/sermyes/musicCenter"
+            href='https://github.com/sermyes/musicCenter'
             className={styles.contact}
           >
             <i className={`${styles.contact_icon} fab fa-github`} />

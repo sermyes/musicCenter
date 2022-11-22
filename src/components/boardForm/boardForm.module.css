@@ -22,7 +22,6 @@
   font-weight: bold;
 }
 .notice {
-  background: rgba(255, 0, 0, 0.1);
   color: red;
 }
 .question,
@@ -37,10 +36,10 @@
 }
 .info > label {
   margin-right: 5px;
-  font-size: 12px;
+  font-size: 14px;
 }
-.info > input[type="text"],
-.info > input[type="password"] {
+.info > input[type='text'],
+.info > input[type='password'] {
   box-sizing: border-box;
   margin-right: 20px;
   padding: 1px 5px;
@@ -61,7 +60,7 @@
   right: 2%;
   bottom: 15%;
   text-align: center;
-  letter-spacing: 0.2rem;
+  letter-spacing: 0.05rem;
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -74,8 +73,8 @@
 }
 
 @media screen and (max-width: 991px) {
-  .info > input[type="text"],
-  .info > input[type="password"] {
+  .info > input[type='text'],
+  .info > input[type='password'] {
     margin-right: 10px;
     width: 100px;
   }

@@ -1,6 +1,6 @@
-import React, { memo, useRef } from "react";
-import styles from "./boardForm.module.css";
-import { v4 as uuidv4 } from "uuid";
+import React, { memo, useRef } from 'react';
+import styles from './boardForm.module.css';
+import { v4 as uuidv4 } from 'uuid';
 
 const BoardForm = memo(({ onConfirm, admin }) => {
   const nameRef = useRef();
@@ -9,17 +9,17 @@ const BoardForm = memo(({ onConfirm, admin }) => {
   const typeRef = useRef();
 
   const onChange = (e) => {
-    if (e.target.value === "notice") {
-      e.target.style.cssText = `background: rgba(255, 0, 0, 0.1); color: red;`;
+    if (e.target.value === 'notice') {
+      e.target.style.cssText = `color: red;`;
     } else {
-      e.target.style.cssText = `background: #fff; color: #000;`;
+      e.target.style.cssText = `color: #000;`;
     }
   };
 
   const resetForm = () => {
-    nameRef.current.value = "";
-    pswRef.current.value = "";
-    contentRef.current.value = "";
+    nameRef.current.value = '';
+    pswRef.current.value = '';
+    contentRef.current.value = '';
   };
 
   const onClick = (e) => {
@@ -31,18 +31,18 @@ const BoardForm = memo(({ onConfirm, admin }) => {
     const date = new Date().getTime();
     const type = typeRef.current.value;
 
-    if (name === "") {
-      window.alert("작성자를 입력하세요.");
+    if (name === '') {
+      window.alert('작성자를 입력하세요.');
       return;
-    } else if (psw === "") {
-      window.alert("비밀번호를 입력하세요.");
+    } else if (psw === '') {
+      window.alert('비밀번호를 입력하세요.');
       return;
-    } else if (content === "") {
-      window.alert("내용을 입력하세요.");
+    } else if (content === '') {
+      window.alert('내용을 입력하세요.');
       return;
     }
-    if (type === "notice" && psw !== String(admin.psw)) {
-      window.alert("접근권한이 없습니다.");
+    if (type === 'notice' && psw !== String(admin.psw)) {
+      window.alert('접근권한이 없습니다.');
       resetForm();
       return;
     }
@@ -54,8 +54,8 @@ const BoardForm = memo(({ onConfirm, admin }) => {
         content: content,
         key,
         date,
-        type: type,
-      },
+        type: type
+      }
     };
     onConfirm(post, key);
     resetForm();
@@ -66,55 +66,59 @@ const BoardForm = memo(({ onConfirm, admin }) => {
       <fieldset className={styles.input}>
         <div className={styles.typeContainer}>
           <select
-            name="type"
-            id="type"
+            name='type'
+            id='type'
             className={styles.type}
-            defaultValue="post"
+            defaultValue='post'
             ref={typeRef}
             onChange={onChange}
           >
-            <option value="notice" className={styles.notice}>
-              공지
+            <option value='notice' className={styles.notice}>
+              Notice
             </option>
-            <option value="post" className={styles.request}>
-              요청
+            <option value='post' className={styles.request}>
+              Request
             </option>
-            <option value="question" className={styles.question}>
-              문의
+            <option value='question' className={styles.question}>
+              Talk
             </option>
           </select>
         </div>
         <div className={styles.info}>
-          <label htmlFor="id">작성자</label>
+          <label htmlFor='id'>
+            <i className={`fas fa-user`}></i>
+          </label>
           <input
-            type="text"
-            id="id"
-            minLength="1"
-            maxLength="5"
+            type='text'
+            id='id'
+            minLength='1'
+            maxLength='8'
             required
             ref={nameRef}
           />
-          <label htmlFor="psw">비밀번호</label>
+          <label htmlFor='psw'>
+            <i className={`fas fa-unlock`}></i>
+          </label>
           <input
-            type="password"
-            id="psw"
-            minLength="1"
-            maxLength="10"
+            type='password'
+            id='psw'
+            minLength='1'
+            maxLength='10'
             required
             ref={pswRef}
+            autoComplete='on'
           />
         </div>
         <div className={styles.wrapper}>
           <textarea
             className={styles.content}
-            placeholder="댓글을 남겨보세요."
-            cols="30"
-            rows="10"
+            cols='30'
+            rows='10'
             required
             ref={contentRef}
           ></textarea>
           <button className={styles.confirm} onClick={onClick}>
-            등록
+            Post Reply
           </button>
         </div>
       </fieldset>

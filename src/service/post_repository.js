@@ -1,24 +1,31 @@
-import { firebaseDatabase } from './firebase';
+import { getDatabase, ref, set, remove, onValue, off } from 'firebase/database';
 
-class PostRespository{
-    getPost(onRead){
-        const ref = firebaseDatabase.ref(`posts/`);
-        
-        ref.on('value', (snapshot) => {
-            const value = snapshot.val();
-            value && onRead(value);
-        });
+class PostRespository {
+  constructor() {
+    this.database = getDatabase();
+  }
 
-        return () => { ref.off() };
-    }
+  getPost(onRead) {
+    const query = ref(this.database, `posts/`);
 
-    savePost(post, key){
-        firebaseDatabase.ref(`posts/${post[key].type}/${post[key].key}`).set(post[key]);
-    }
+    onValue(query, snapshot => {
+      const value = snapshot.val();
+      value && onRead(value);
+    });
 
-    removePost(post){
-        firebaseDatabase.ref(`posts/${post.type}/${post.key}`).remove();
-    }
+    return () => off(query);
+  }
+
+  savePost(post, key) {
+    set(
+      ref(this.database, `posts/${post[key].type}/${post[key].key}`),
+      post[key]
+    );
+  }
+
+  removePost(post) {
+    remove(ref(this.database, `posts/${post.type}/${post.key}`));
+  }
 }
 
 export default PostRespository;

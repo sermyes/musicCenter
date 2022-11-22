@@ -1,19 +1,19 @@
-import React, { memo, useRef } from "react";
-import styles from "./boardItem.module.css";
+import React, { memo, useRef } from 'react';
+import styles from './boardItem.module.css';
 
 const OptionButton = memo(({ post, notice, admin, onRemove }) => {
   const deleteRef = useRef();
 
   const onDelete = (e) => {
     e.preventDefault();
-    const psw = window.prompt("비밀번호를 입력하세요");
+    const psw = window.prompt('비밀번호를 입력하세요');
     const type = post ? post : notice;
     if (psw === String(type.psw) || psw === String(admin.psw)) {
       onRemove(type);
     } else if (psw === null) {
       return;
     } else {
-      window.alert("권한이 없습니다.");
+      window.alert('권한이 없습니다.');
     }
   };
 
@@ -44,7 +44,7 @@ const BoardItem = memo(({ notice, onRemove, post, admin }) => {
     const betweenTime = Math.floor(
       (today.getTime() - timeValue.getTime()) / 1000 / 60
     );
-    if (betweenTime < 1) return "방금전";
+    if (betweenTime < 1) return '방금전';
     if (betweenTime < 60) {
       return `${betweenTime}분전`;
     }
@@ -81,7 +81,7 @@ const BoardItem = memo(({ notice, onRemove, post, admin }) => {
       {!notice && (
         <div className={styles.item}>
           <span className={styles.type}>
-            {type === "post" ? "요청" : "문의"}
+            {type === 'post' ? 'Request' : ''}
           </span>
           <p className={styles.itemContent}>
             <span>{post.content}</span>
@@ -102,7 +102,7 @@ const BoardItem = memo(({ notice, onRemove, post, admin }) => {
       )}
       {notice && (
         <div className={styles.notice}>
-          <span className={styles.type}>공지</span>
+          <span className={styles.type}>Notice</span>
           <span className={styles.noticeContent}>{notice.content}</span>
           <p className={styles.adminWrapper}>
             <span className={styles.name}>{notice.name}</span>

@@ -1,6 +1,6 @@
-import React from "react";
-import VideoItem from "../videoItem/videoItem";
-import styles from "./updatedMusic.module.css";
+import React from 'react';
+import VideoItem from '../videoItem/videoItem';
+import styles from './updatedMusic.module.css';
 
 const UpdatedMusic = ({ updatedVideo, onVideoClick }) => {
   return (
