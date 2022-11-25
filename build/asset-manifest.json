@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/musicCenter/static/css/main.c90e9800.chunk.css",
+    "main.js": "/musicCenter/static/js/main.a834f0a6.chunk.js",
+    "main.js.map": "/musicCenter/static/js/main.a834f0a6.chunk.js.map",
+    "runtime-main.js": "/musicCenter/static/js/runtime-main.bac7f4e7.js",
+    "runtime-main.js.map": "/musicCenter/static/js/runtime-main.bac7f4e7.js.map",
+    "static/js/2.d6c46e8f.chunk.js": "/musicCenter/static/js/2.d6c46e8f.chunk.js",
+    "static/js/2.d6c46e8f.chunk.js.map": "/musicCenter/static/js/2.d6c46e8f.chunk.js.map",
+    "index.html": "/musicCenter/index.html",
+    "static/css/main.c90e9800.chunk.css.map": "/musicCenter/static/css/main.c90e9800.chunk.css.map",
+    "static/js/2.d6c46e8f.chunk.js.LICENSE.txt": "/musicCenter/static/js/2.d6c46e8f.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bac7f4e7.js",
+    "static/js/2.d6c46e8f.chunk.js",
+    "static/css/main.c90e9800.chunk.css",
+    "static/js/main.a834f0a6.chunk.js"
+  ]
+}
