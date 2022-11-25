@@ -1,7 +1,7 @@
-import React from "react";
-import SimpleSlider from "../simpleSlider/simpleSlider";
-import VideoItem from "../videoItem/videoItem";
-import styles from "./musicList.module.css";
+import React from 'react';
+import SimpleSlider from '../simpleSlider/simpleSlider';
+import VideoItem from '../videoItem/videoItem';
+import styles from './musicList.module.css';
 
 const MusicList = ({ videos, onVideoClick }) => {
   const settings = {
@@ -14,10 +14,10 @@ const MusicList = ({ videos, onVideoClick }) => {
         settings: {
           slideToShow: 2,
           onArrow: true,
-          onDots: false,
-        },
-      },
-    ],
+          onDots: false
+        }
+      }
+    ]
   };
 
   return (

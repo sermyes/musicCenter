@@ -15,6 +15,7 @@ const SimpleSlider = ({ settings, children }) => {
   const dotsRef = useRef();
 
   const createSlide = useCallback(() => {
+    // slide 생성.
     const slideWidth = slidesContainerRef.current.clientWidth;
     const slideLength = slidesRef.current.childElementCount;
     const showSlide = setting.current.slideToShow
@@ -28,6 +29,7 @@ const SimpleSlider = ({ settings, children }) => {
   }, []);
 
   const setSlidePosition = () => {
+    // browser size 변경시, slide제대로 위차하게 자리 재조정.
     const width = slidesContainerRef.current.clientWidth;
     const slideLength = slidesRef.current.childElementCount;
     let currentPosition = slidesRef.current.style.transform;
@@ -38,7 +40,6 @@ const SimpleSlider = ({ settings, children }) => {
     }
 
     currentPosition = currentPosition.replace(/[^0-9]/g, '');
-
     for (let i = 1; i < slideLength; i++) {
       if (width * i >= currentPosition) {
         const next = width * i - currentPosition;
@@ -51,6 +52,7 @@ const SimpleSlider = ({ settings, children }) => {
   };
 
   const createDots = useCallback(() => {
+    // slide dots 생성.
     const dots = document.querySelector('.simple__dots');
     dots.innerHTML = '';
 
@@ -74,6 +76,7 @@ const SimpleSlider = ({ settings, children }) => {
   }, [currentIndex]);
 
   const goToSlide = (index) => {
+    // slide 이동.
     const slideWidth = slidesContainerRef.current.clientWidth;
     slidesRef.current.style.transform = `translateX(${-(
       slideWidth * index
@@ -85,6 +88,7 @@ const SimpleSlider = ({ settings, children }) => {
   };
 
   const onActive = (index) => {
+    // slide 이동시 일치하는 dot에 style부여.
     const targetDot = dotsRef.current.childNodes[index];
     dotsRef.current.childNodes.forEach((dot) => {
       dot.classList.remove('active');
@@ -93,6 +97,7 @@ const SimpleSlider = ({ settings, children }) => {
   };
 
   const onPrevClick = (e) => {
+    // slide 뒤로 이동.
     e.preventDefault();
     let next = currentIndex - 1;
     if (next < 0) {
@@ -103,6 +108,7 @@ const SimpleSlider = ({ settings, children }) => {
   };
 
   const onNextClick = (e) => {
+    // slide 앞으로 이동.
     e.preventDefault();
     let next = currentIndex + 1;
     if (next > length - 1) {
@@ -113,6 +119,7 @@ const SimpleSlider = ({ settings, children }) => {
   };
 
   const onDotClick = (e) => {
+    // dot click으로 slide 이동.
     if (!e.target.matches('.simple__dot')) {
       return;
     }
@@ -127,6 +134,7 @@ const SimpleSlider = ({ settings, children }) => {
   };
 
   const changeSettings = useCallback(() => {
+    // responsive에 맞게 slide 설정값 조정.
     const clientWidth = window.innerWidth;
     let newSetting = null;
 
@@ -171,11 +179,13 @@ const SimpleSlider = ({ settings, children }) => {
 
   useEffect(() => {
     if (slideRef.current && !loading) {
+      // 처음 로딩되었을 때, browser size에 맞게 설정값 부여.
       changeSettings();
       setLoading(true);
     }
 
     window.addEventListener('resize', changeSettings);
+    // broswer size가 변경되었을 때, 다시 설정값 조정.
 
     return () => {
       window.removeEventListener('resize', changeSettings);
@@ -199,7 +209,7 @@ const SimpleSlider = ({ settings, children }) => {
             <i className={`${styles.icon} fas fa-chevron-left`}></i>
           </button>
           <button className={styles.next} ref={nextRef} onClick={onNextClick}>
-            <i className={`${styles.icon} fa-solid fa-comment`}></i>
+            <i className={`${styles.icon} fas fa-chevron-right`}></i>
           </button>
         </div>
       )}
